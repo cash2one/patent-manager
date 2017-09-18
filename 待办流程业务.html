@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>九致专利后台管理系统</title>
+    <link rel="stylesheet" href="./component/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./dist/css/main.css">
+    <link rel="stylesheet" href="./component/DatePicker/skin/WdatePicker.css">
+    <link rel="stylesheet" href="./component/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./component/scrollBar/jquery.mCustomScrollbar.css">
+    <script src="./dist/js/jquery-1.12.4.min.js"></script>
+    <script src="./component/scrollBar/jquery.mousewheel.min.js"></script>
+    <script src="./component/scrollBar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="./dist/js/common.js"></script>
+    <script src="./component/DatePicker/WdatePicker.js"></script>
+    <script src="./component/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- header  -->
+    <div class="header">
+        <div class="logo">
+            <img src="./dist/images/logo2.png" alt="">
+            <span>九致专利后台管理系统</span>
+        </div>
+        <div class="user fr">
+            <span class="name">欢迎您，<i>admin</i></span>
+            <a class="link" href="./index.html">回到首页</a>
+            <a class="link" href="javascript:;" onclick="logout()">安全退出</a>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- 左侧菜单栏 -->
+    <div id="left" class="menu mCustomScrollbar">
+        <ul>
+            <li>
+                <a href="javascript:;" class="a1"><i class="iconfont icon">&#xe601;</i><span>待办事项</span><i class="iconfont arrow icon-xiangyou"></i></a>
+                <ul class="subnav-menu">
+                    <li><a href="./待办流程业务.html">待办流程任务</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"><i class="iconfont icon">&#xe625;</i> <span>立案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./立案审批.html">立案审批</a></li>
+                    <li><a href="./立案审批信息.html">立案审批信息</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"><i class="iconfont icon">&#xe6ea;</i> <span>新案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./新案审核详细.html">新案审核详细</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"><i class="iconfont icon">&#xe611;</i> <span>任务管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./任务统计.html">任务统计</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"> <i class="iconfont icon">&#xe638;</i><span>案件管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./新案案件.html">新案案件</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"> <i class="iconfont icon">&#xe764;</i><span>档案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./档案管理详细.html">档案管理详细</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"><i class="iconfont icon">&#xe644;</i> <span>配置管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./号码规则管理.html">号码规则管理</a></li>
+                    <li><a href="./费用配置管理.html">费用配置管理</a></li>
+                    <li><a href="./流程人员配置.html">流程人员配置</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"><i class="iconfont icon">&#xe6bb;</i> <span>专利配置</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./专利许可添加.html">专利许可添加、修改</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="a1"> <i class="iconfont icon">&#xe6fa;</i><span>系统管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+                <ul class="subnav-menu">
+                    <li><a href="./组织机构管理.html">组织机构管理</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 右侧 框架 -->
+    <div class="fl embed-responsive right-content" id="content">
+        <!-- <iframe name="subject" src="" class="embed-responsive-item" id="subject"></iframe> -->
+        <div class="embed-responsive-item" id="subject">
+            <!-- 我的位置 -->
+            <h2 class="title"><i>当前位置：</i>待办流程业务</h2>
+            <!-- 主要内容 -->
+            <div class="main-con">
+                <!-- 搜索标签 -->
+                <div class="search-layout">
+                    <form action="" onsubmit="return false;">
+                        <div class="item">
+                            <label class="item-name">任务名称：</label>
+                            <input type="text" class="item-input">
+                        </div>
+                        <div class="item">
+                            <label class="item-name">任务状态：</label>
+                            <select name="" id="" class="item-select">
+                                <option value="0">待办</option>
+                                <option value="1">办理中</option>
+                                <option value="2">待审核</option>
+                                <option value="3">办结</option>
+                            </select>
+                        </div>
+                        <div class="item">
+                            <label class="item-name">案件名称：</label>
+                            <input type="text" class="item-input">
+                        </div>
+                        <div class="item">
+                            <label class="item-name">申请号：</label>
+                            <input type="text" class="item-input">
+                        </div>
+                        <div class="item item-time">
+                            <label class="item-name">申请日：</label>
+                            <input type="text" class="item-input Wdate" onClick="WdatePicker()"> - <input type="text" class="item-input Wdate"
+                                onClick="WdatePicker()">
+                        </div>
+                        <div class="item">
+                            <label class="item-name">申请人：</label>
+                            <input type="text" class="item-input">
+                        </div>
+                        <div class="item">
+                            <label class="item-name">发明人：</label>
+                            <input type="text" class="item-input">
+                        </div>
+                        <div class="item">
+                            <label class="item-name">发起人：</label>
+                            <input type="text" class="item-input">
+                        </div>
+                        <div class="item">
+                            <label class="item-name">待办人：</label>
+                            <input type="text" class="item-input">
+                        </div>
+                        <div class="item">
+                            <label class="item-name">待办期限：</label>
+                            <input type="text" class="item-input Wdate" onClick="WdatePicker()"> - <input type="text" class="item-input Wdate"
+                                onClick="WdatePicker()">
+                        </div>
+                        <div class="search-btn ">
+                            <button class="btn btn-info" type="reset">重置</button>
+                            <button class="btn btn-primary" type="submit">查询</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- 搜索标签 end-->
+                <!-- 任务弹层 -->
+                <div class="task-btn">
+                    <a href="javascript:;" class="btn btn-info" onclick="acceptModal()">接受任务</a>
+                    <a href="javascript:;" class="btn btn-primary" onclick="transpondModal()">转发任务</a>
+                    <a href="javascript:;" class="btn btn-success" onclick="finishModal()">完成任务</a>
+                </div>
+                <!-- 任务弹层 end -->
+                <!-- 表格table -->
+                <div class="table-data-list">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="CheckAll">全选</th>
+                                <th>序号</th>
+                                <th>任务名称</th>
+                                <th>任务状态</th>
+                                <th>案件名称</th>
+                                <th>申请号</th>
+                                <th>申请日</th>
+                                <th>声请人</th>
+                                <th>发明人</th>
+                                <th>发起人</th>
+                                <th>待办人</th>
+                                <th>开始时间</th>
+                                <th>办理期限</th>
+                                <th>绝限日</th>
+                                <th>结束时间</th>
+                                <th>附件</th>
+                                <th>PDF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="items"></td>
+                                <td>1</td>
+                                <td>测试名称</td>
+                                <td>已完成</td>
+                                <td>测试名称</td>
+                                <td>10010</td>
+                                <td>2017-9-11</td>
+                                <td>王大锤</td>
+                                <td>白客</td>
+                                <td>王尼玛</td>
+                                <td>测试人</td>
+                                <td>2017-08-28</td>
+                                <td>2017-08-28</td>
+                                <td>2017-08-28</td>
+                                <td>2017-08-28</td>
+                                <td>附件</td>
+                                <td>PDF</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="items"></td>
+                                <td>2</td>
+                                <td>测试名称</td>
+                                <td>已完成</td>
+                                <td>测试名称如果很长的恶化</td>
+                                <td>10010</td>
+                                <td>2017-9-11</td>
+                                <td>王大锤</td>
+                                <td>白客</td>
+                                <td>王尼玛</td>
+                                <td>测试人</td>
+                                <td>2017-08-28</td>
+                                <td>2017-08-28</td>
+                                <td>2017-08-28</td>
+                                <td>2017-08-28</td>
+                                <td>附件</td>
+                                <td>PDF</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+                <!-- 表格table end-->
+                <!-- 分页 -->
+                <div class="pages">
+                    <div class="page-size fr">
+                        <select>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                    </select>
+                    </div>
+                    <div class="page-total fr">共 44 条</div>
+                    <div class="page-jump fr">
+                        <div class="page-jump-group">
+                            <input type="text">
+                            <button type="button">跳转</button>
+                        </div>
+                    </div>
+                    <ul class="page-list fr">
+                        <li><a class="active">1</a></li>
+                        <li><a>«</a></li>
+                        <li><a>3</a></li>
+                        <li><a>4</a></li>
+                        <li><a>5</a></li>
+                        <li><a>6</a></li>
+                        <li><a>7</a></li>
+                        <li><a>8</a></li>
+                        <li><a>»</a></li>
+                        <li><a>100</a></li>
+                    </ul>
+
+                </div>
+                <!-- 分页 end -->
+            </div>
+        </div>
+        <div class="footer"> 版权所有：苏州市相城区科技发展局&nbsp;&nbsp;&nbsp;&nbsp;备案号：苏ICP备15051895&nbsp;&nbsp;&nbsp;&nbsp;技术支持：南京九致信息科技有限公司</div>
+    </div>
+
+    <script>
+        //接受任务弹层
+        function acceptModal() {
+            $("#accept-task").show();
+        }
+        //接受任务确认
+        function acceptTaskSave() {
+            var name = $("#accept_task_name").val();
+            var time = $("#accept_task_time").val();
+            var con = $("#accept_task_con").val();
+            var log = $("#accept_task_log").val();
+            if (name == '' || name == null) {
+                $(".error-msg").show().text('请输入任务名称！');
+                return false;
+            } else if (time == '' || time == null) {
+                $(".error-msg").show().text('请选择任务期限！');
+                return false;
+            } else if (con == '' || con == null) {
+                $(".error-msg").show().text('请输入任务内容！');
+                return false;
+            } else if (log == '' || log == null) {
+                $(".error-msg").show().text('请输入办理日志：！');
+                return false;
+            } else {
+                return true;
+            }
+        }
+        //转发任务弹层
+        function transpondModal() {
+            $("#transpond-task").show();
+        }
+        //完成任务弹层
+        function finishModal() {
+            $("#finish-task").show();
+        }
+
+        /***********************/
+        /*****jq操作dom对象****/
+        init();
+        $(function () {
+            // 全选功能
+            $("#CheckAll").click(function () {
+                $('[name=items]:checkbox').prop("checked", this.checked);
+            })
+            //单项与全选实现联动
+            $('[name=items]:checkbox').click(function () {
+                var flag = true;
+                $('[name=items]:checkbox').each(function () {
+                    if (!this.checked) {
+                        flag = false;
+                    }
+                })
+                $("#CheckAll").prop('checked', flag);
+            })
+        });
+    </script>
+</body>
+
+</html>

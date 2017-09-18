@@ -1,0 +1,748 @@
+@import 'var.scss';
+// header
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  min-width: 1360px;
+  height: 46px;
+  background-color: $theme-color;
+  .logo{
+    width: 300px;
+    float: left;
+    img{
+      height: 46px;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 15px;
+      color:#fff;
+    }
+  }
+  .user{
+    float: right;
+    text-align: right;
+    padding-right: 20px;
+    .name{
+      padding-top: 10px;
+      font-size: 15px;
+      color:#fff;
+      margin-left: 10px;
+      i{
+        color: blue;
+      }
+
+    }
+    .link{
+      display: inline-block;
+      margin-top: 5px;
+      margin-left: 3px;
+      background-color: #eee;
+      border: 1px solid #e2e2e2;
+      border-radius: 3px;
+      padding: 5px 10px;
+      color: $theme-color;
+    }
+  }
+}
+//footer
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #434a54;
+  color: #ffffff;
+  padding: 4px;
+}
+// left
+.menu{
+  position: absolute;
+  top: 46px;
+  left: 0;
+  z-index: 2;
+  width: 200px;
+  background-color: #434a54;
+  padding-top: 10px;
+  overflow: hidden;
+  ul{
+    background: #434a54;
+    li{
+      margin: 0;
+      padding: 0;
+      .a1{
+        padding: 12px 5px 12px 45px;
+        display: block;
+        border-left: 3px solid transparent;
+        color: #fff;
+        position: relative;
+        .icon{
+          position: absolute;
+          left: 10px;
+          top:12px;
+          font-size: 20px;
+        }
+        .iconfont{
+          position: absolute;
+          right: 10px;
+          top:12px;
+        }
+        &.active{
+          border-left: 3px solid $theme-color;
+          background: #3a3e47;
+          color: #fff;
+        }
+      }
+      .subnav-menu{
+        background: #5B606B;
+        display: none;
+        li{
+          position: relative;
+          &.active{
+            a{
+              color:$theme-color;
+              &::after{
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                width: 5px;
+                border-color: rgba(0,0,0,0);
+                border-left-color:$theme-color;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                content: " ";
+              }
+            }
+          }
+          a{
+            padding: 10px 10px 10px 50px;
+            display: block;
+            font-size: 14px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+//右侧主要内容
+#content{
+  position: absolute;
+  top: 46px;
+  left: 200px;
+  min-width: 1160px;
+}
+// iframe
+#subject{
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+.right-content{
+  h2.title{
+    width: 100%;
+    border: 1px solid #DBDBDB;
+    border-top: none;
+    border-right: none;
+    font-size: 15px;
+    line-height: 36px;
+    color: #286090;
+    padding-left: 20px;
+    i{
+      padding-right: 10px;
+      color: #0f0f0f;
+    }
+  }
+  .main-con{
+    margin: 0 20px;
+  }
+  .index-wrapper{
+    img{
+      max-width: 100%;
+    }
+  }
+  .search-layout{
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    border-bottom-width: 3px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background: #fff;
+    margin:10px 0;
+    .search-keyword{
+      .font{
+        width: 100px;
+        text-align: right;
+        display: inline-block;
+        line-height: 34px;
+        color:#333;
+        padding-right: 5px;
+      }
+      .common-input{
+        margin-right: 10px;
+      }
+    }
+    .item{
+      width: 320px;
+      display:block;
+      margin-bottom: 10px;
+      float: left;
+      .item-name{
+        width: 100px;
+        text-align: right;
+        display: inline-block;
+      }
+      .Wdate{
+        width: 100px !important;
+      }
+      .item-input,.item-select{
+       width: 212px;
+        height: 25px;
+        font-size: 14px; 
+        text-indent: 5px;
+        display: inline-block;
+        border: 1px solid rgb(169, 169, 169);;
+        border-radius: 2px;
+      }
+    }
+    .search-btn{
+      width: 100%;
+      clear: both;
+      text-align: center;
+      padding-top: 15px;
+      button{
+        margin-left: 15px;
+      }
+    }
+  }
+  .task-btn{
+    width: 100%;
+    padding:10px 0 0;
+    .btn{
+      margin-right: 10px;
+    }
+  }
+}
+//错误提醒
+.error-container{
+  width: 600px;
+  text-align: center;
+  margin:40px auto;
+  .err-msg-big{ 
+    padding: 15px 0;
+    font-size: 30px;
+    color:#848484;
+    i{
+      color:$theme-color;
+      font-size: 40px;
+      padding: 0px 15px;
+    }
+  }
+  .err-msg{
+    font-size: 16px;
+    color:#999;
+    padding: 20px 0;
+    .iconfont{
+      font-size:38px;
+      color:#4fc0e8;
+    }
+  }
+  .err-btn{
+    margin-top: 40px;
+    .btn{
+      margin: 0px 15px;
+    }
+  }
+
+}
+// 通用表格
+.table-data-list{
+  margin-top: 10px;
+  overflow-x: auto;
+}
+.table {
+  width: 100%; 
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px solid #BABABA;
+  tr{
+    &:hover{
+      background-color: #f5f5f5;
+    }
+    th,td{
+      padding:4px 6px; 
+      text-align: center;
+      word-break:keep-all;          
+      white-space:nowrap;     
+      text-overflow:ellipsis; 
+    }
+    th{
+      border:1px solid #B7B6B6;
+      background: $theme-color;
+      color:#fff;
+      font-weight: 400;
+    }
+    td{
+      border: 1px solid #BABABA;
+    }
+  }
+}
+//通用page
+.pages{
+  float:right;
+  margin: 10px 0;
+  .page-list{
+    li{
+      float: left;
+      a{
+        margin-left: -1px;
+        display: inline-block;
+        padding: 2px 7px;
+        border: 1px solid #dcdcdc;
+        background: #fff;
+        font-size: 12px;
+        box-sizing: content-box;
+        color:$theme-color;
+        cursor: pointer;
+        &.active{
+          background: $theme-color;
+          color:#fff;
+          &:hover{
+            background: $theme-color;
+            color:#fff;
+          }
+        }
+        &:hover{
+          background-color: #eee;
+        }
+      }
+    }
+  }
+  .page-jump{
+    margin-right: 4px;
+    padding-right: 5px;
+    .page-jump-group{
+      margin-left: 10px;
+      input{
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        width: 25px;
+        padding: 2px 5px;
+        text-align: center;
+        box-sizing: content-box;
+        border: 1px solid #dcdcdc;
+        float: left;
+      }
+      button{
+        border-left: none;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        padding: 2px 7px;
+        border: 1px solid #dcdcdc;
+        float: left;
+        background: $theme-color;
+        color:#fff;
+      }
+    }
+  }
+  .page-total{
+    float: right;
+    color:#888;
+    line-height: 25px;
+    margin: 0px 10px;
+    font-size: 12px;
+  }
+  .page-size{
+    border: 1px solid #dcdcdc;
+    select{
+      cursor: pointer;
+      height: 18px;
+      width: 40px;
+      padding-left: 4px;
+      border-radius: 2px;
+      font-size: 12px;
+      color:#888;
+    }
+  }
+}
+//通用弹出层
+.modal{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom:0;
+  z-index: 1000;
+  background: rgba(0, 0, 0,.5);
+  display: none;
+  .modal-content{
+    width: 400px;
+    height: auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    margin: 10px auto;
+    .modal-header{
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 0px 20px;
+      text-align: center;
+      position: relative;
+      background: $theme-color;
+      h4{
+        font-size: 16px;
+        color:#fff;
+      }
+      .close{
+        width: 40px;
+        height: 50px;
+        display: block;
+        text-align: right;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        .iconfont{
+          font-size: 18px;
+          color:#fff;
+          cursor: pointer;
+        }
+      }
+      
+    }
+    .modal-body{
+      padding: 20px;
+      overflow: hidden;
+      .error-msg{
+        font-size: 12px;
+        color:red;
+        padding-left: 10px;
+        display: none;
+        text-align: center;
+      }
+      .form-line{
+        width: 100%;
+        margin-bottom: 10px;
+        label{
+          display: inline-block;
+          width: 100px;
+          text-align: right;
+          vertical-align: top;
+          line-height: 26px;
+          color: #666;
+        }
+        .form-input{
+          width: 200px;
+          height: 26px;
+          display: inline-block;
+          border: 1px solid #a9a9a9;
+          border-radius: 2px;
+          text-indent: 5px;
+        }
+        .form-file{
+          display: inline-block;
+          width: 250px;
+        }
+        .form-textarea{
+          width: 200px;
+          height: 60px;
+          display: inline-block;
+          border: 1px solid #a9a9a9;
+          border-radius: 2px;
+          padding: 10px 5px;
+          resize: none;
+        }
+        .input-file{
+          width: 240px;
+          height: 35px;
+          font-family: "Microsoft YaHei";
+          margin-top: 0px;
+        }
+      }
+    }
+    .modal-footer{
+      padding: 20px 0;
+      text-align: center;
+      .btn{
+        margin-right: 30px;
+      }
+    }
+  }
+}
+// 立案审批css
+.put-on-record{
+  .section{
+    h4{
+      width: 100%;
+      height: 40px; 
+      line-height: 40px;
+      text-indent: 5px;
+      border: 1px solid #ccc;
+      background: #ddd;
+      border-radius: 2px;
+      margin-bottom: 10px;
+    }
+    .line{
+      display: block;
+      margin-bottom:15px;
+      .item{
+        display: inline-block;
+        margin-right: 50px;
+        span{
+          width: 100px;
+          text-align: right;
+          line-height: 26px;
+          display: inline-block;
+          margin-right: 5px;
+        }
+        .input_text,.select{
+          width: 214px;
+          height: 25px;
+          font-size: 14px; 
+          text-indent: 5px;
+          display: inline-block;
+          border: 1px solid rgb(169, 169, 169);
+          border-radius: 2px;
+        }
+        .textarea_text{
+          width: 595px;
+          height: 65px;
+          font-size: 14px; 
+          text-indent: 5px;
+          display: inline-block;
+          border: 1px solid rgb(169, 169, 169);
+          border-radius: 2px;
+          resize: none;
+          padding: 5px;
+        }
+        .invention-table{
+          width: 595px;
+          border-collapse:collapse;
+        }
+      }
+      .action{
+        label{
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .btn-wrapper{
+    padding: 20px 0;
+    text-align: center;
+    .btn{
+      margin-right: 50px;
+    }
+  }
+}
+
+// 新案审核详细
+.main-contariner{
+  .section{
+    width: 100%;
+    overflow: hidden;
+    h4{
+      width: 100%;
+      height: 40px; 
+      line-height: 40px;
+      text-indent: 5px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .item{
+      width: 40%;
+      display: block;
+      float:left;
+      margin-bottom:15px;
+      .font{
+        width: 130px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: right;
+      }
+      .name{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .action{
+        display: inline-block;
+        vertical-align: middle;
+        label{
+         position: relative;
+         top:2px;
+         padding-right: 30px;
+        }
+      }
+      .input_text,.select{
+        width: 214px;
+        height: 25px;
+        font-size: 14px; 
+        text-indent: 5px;
+        display: inline-block;
+        border: 1px solid rgb(169, 169, 169);
+        border-radius: 2px;
+      }
+      .textarea_text{
+        width: 665px;
+        height: 65px;
+        font-size: 14px; 
+        text-indent: 5px;
+        display: inline-block;
+        border: 1px solid rgb(169, 169, 169);
+        border-radius: 2px;
+        resize: none;
+        padding: 5px;
+      }
+      .invention-table{
+        width: 665px;
+        border-collapse:collapse;
+      }
+    }
+  }
+  .input-file{
+    margin-bottom: 10px;
+  }
+  .btn-wrapper{
+    padding: 20px 0;
+    text-align: center;
+    .btn{
+      margin-right: 50px;
+    }
+  }
+}
+// 任务统计
+.task-echarts{
+  width: 100%;
+  .histogram{
+    width: 45%;
+    display: inline-block;
+    .title{
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 10px 0;
+    }
+  }
+}
+// 档案详细管理
+.file-layout{
+  position: relative;
+  .file-tab{
+    width: 120px;
+    position: absolute;
+    top: 0px;
+    left:0;
+    z-index: 100;
+    background: #fff;
+    dl{
+      width: 100%;
+      border:1px solid #C6C6C6;
+      border-bottom-width: 0px;
+      dt{
+        width: 100%;
+        padding: 8px 5px;
+        display: inline-block;
+        text-indent: 10px;
+        border-bottom: 1px solid #c6c6c6;
+        background: #eee;
+        cursor: pointer;
+        .iconfont{
+          padding-right: 3px;
+          font-size: 14px;
+          color:#666;
+        }
+      }
+      dd{
+        display: none;
+        cursor: pointer;
+        width: 100%;
+        padding: 8px 12px;
+        text-indent: 20px;
+        border-bottom: 1px solid #c6c6c6;
+        &:hover{
+          background: #f5f5f5;
+        }
+        &.on{
+          background: #f5f5f5;
+          color:#337ab7;
+        }
+      }
+    }
+  }
+  .file-tab-show{
+    display: none;
+  }
+  .file-table{
+    .upload{
+      margin-bottom: 10px;
+    }
+    width: 100%;
+    padding-left: 140px;
+  }
+}
+// 年费配置规则
+.annual-fee{
+  width: 100%;
+  .item{
+    width: 50%;
+    display:block;
+    float:left;
+    margin-bottom: 10px;
+    .font{
+      width: 60px;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: right;
+    }
+    input,select{
+      width: 119px;
+      height: 24px;
+      text-indent: 5px;
+      display: inline-block;
+      border: 1px solid rgb(169, 169, 169);
+      border-radius: 2px;
+    }
+  }
+}
+// 流程人员配置
+.staff{
+  .staff_select,.staff_input{
+    width: 300px;
+    height: 26px;
+    text-indent: 5px;
+    display: inline-block;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 2px;
+  }
+  .selectbox {
+    width: auto;
+    height: 200px;
+    margin: 10px auto 0;
+    .select-bar{
+      select {
+        width: 260px;
+        height: 200px;
+        border: 1px #A0A0A4 solid;
+        padding: 4px;
+      }
+    }
+    .btn-bar{
+      padding: 0px 30px;
+      .btn{
+        margin-top: 20px;
+      }
+    }
+  }
+  
+}
+

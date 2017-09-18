@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>用户登录</title>
+    <link rel="stylesheet" href="./dist/css/main.css">
+    <link rel="stylesheet" href="./component/iconfont/iconfont.css">
+    <script src="./dist/js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+     <div class="login-layout">
+        <div class="login">
+            <div class="login-head">系统登录</div>
+            <div class="login-content">
+                <form action="#" onsubmit="return false;">
+                    <div class="login-msg error"></div>
+                    <div class="field">
+                        <span class="icon"><i class="iconfont">&#xe637;</i></span>
+                        <input type="text" placeholder="请输入用户名" id="username">
+                    </div>
+                    <div class="field">
+                        <span class="icon"><i class="iconfont">&#xe604;</i></span>
+                        <input type="password" placeholder="请输入密码" id="password">
+                    </div>
+                    <button class="submit" onclick="login()">登录</button>
+                </form>
+            </div>
+        </div>
+    </div> 
+   
+    <script>
+        function login() {
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if (username == '' || username == null) {
+                $('.login-msg').text('用户名不能用空！');
+                return false;
+            } else if (password == '' || password == null) {
+                $('.login-msg').text('密码不能为空！');
+                return false;
+            } else {
+                //发送后台请求
+                window.location.href = './index.html'
+            }
+        }
+    </script>
+</body>
+
+</html>
