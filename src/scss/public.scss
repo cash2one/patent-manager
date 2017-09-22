@@ -23,6 +23,7 @@ a{
 .fr{
   float: right;
 }
+
 .error{
   color:red;
 }
@@ -42,11 +43,12 @@ button,input,select,textarea{
   text-align: center;
   border-radius: 3px;
   cursor: pointer;
+  margin-right: 10px;
 }
 .btn-info{
   background-color: #31b0d5;
   &:hover{
-    background-color: #31b0d5;
+    background-color: #3BC2E7;
   }
 }
 .btn-cancel{
@@ -123,4 +125,8 @@ button,input,select,textarea{
 }
 .mb10{
   margin-bottom: 10px;
+}
+// width
+.w120{
+  width: 120px !important;
 }

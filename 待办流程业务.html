@@ -64,7 +64,7 @@
             <li>
                 <a href="#" class="a1"> <i class="iconfont icon">&#xe638;</i><span>案件管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
                 <ul class="subnav-menu">
-                    <li><a href="./新案案件.html">新案案件</a></li>
+                    <li><a href="./新增案件.html">新增案件</a></li>
                 </ul>
             </li>
             <li>
@@ -162,9 +162,9 @@
                 <!-- 搜索标签 end-->
                 <!-- 任务弹层 -->
                 <div class="task-btn">
-                    <a href="javascript:;" class="btn btn-info" onclick="acceptModal()">接受任务</a>
-                    <a href="javascript:;" class="btn btn-primary" onclick="transpondModal()">转发任务</a>
-                    <a href="javascript:;" class="btn btn-success" onclick="finishModal()">完成任务</a>
+                    <a href="javascript:;" class="btn btn-info fun-accept">接受任务</a>
+                    <a href="javascript:;" class="btn btn-primary fun-transpond">转发任务</a>
+                    <a href="javascript:;" class="btn btn-success fun-finish">完成任务</a>
                 </div>
                 <!-- 任务弹层 end -->
                 <!-- 表格table -->
@@ -243,7 +243,7 @@
                             <option value="10">10</option>
                             <option value="15">15</option>
                             <option value="20">20</option>
-                    </select>
+                        </select>
                     </div>
                     <div class="page-total fr">共 44 条</div>
                     <div class="page-jump fr">
@@ -271,14 +271,120 @@
         </div>
         <div class="footer"> 版权所有：苏州市相城区科技发展局&nbsp;&nbsp;&nbsp;&nbsp;备案号：苏ICP备15051895&nbsp;&nbsp;&nbsp;&nbsp;技术支持：南京九致信息科技有限公司</div>
     </div>
-
+    <!--  弹框 -->
+    <div class="pop-box-bg"></div>
+    <!-- 接收任务 -->
+    <div class="pop-box pop-box-fun-accept">
+        <div class="pop-box-title">
+            接受任务<span class="pop-box-close">×</span>
+        </div>
+        <div class="pop-box-content">
+            <div class="task-layout">
+                <div class="form-line">
+                    <span class="font">任务名称：</span>
+                    <input type="text" class="form-input">
+                    <span class="error-msg">请输入任务名称</span>
+                </div>
+                <div class="form-line">
+                    <span class="font">任务期限：</span>
+                    <input type="text" class="form-input Wdate" onClick="WdatePicker()" readonly>
+                </div>
+                <div class="form-line">
+                    <span class="font">任务内容：</span>
+                    <textarea name="" id="" class="form-textarea"></textarea>
+                </div>
+                <div class="form-line">
+                    <span class="font">办理日志：</span>
+                    <textarea name="" id="" class="form-textarea"></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" id="task_save_btn" class="btn btn-info">确 定</button>
+                <button type="button" class="btn btn-cancel ">取 消</button>
+            </div>
+        </div>
+    </div>
+    <!-- 转发任务 -->
+    <div class="pop-box pop-box-fun-transpond">
+        <div class="pop-box-title">
+            转发任务<span class="pop-box-close">×</span>
+        </div>
+        <div class="pop-box-content">
+            <div class="task-layout">
+                <div class="form-line">
+                    <span class="font">任务名称：</span>
+                    <input type="text" class="form-input">
+                    <span class="error-msg">请输入任务名称</span>
+                </div>
+                <div class="form-line">
+                    <span class="font">任务期限：</span>
+                    <input type="text" class="form-input Wdate" onClick="WdatePicker()" readonly>
+                </div>
+                <div class="form-line">
+                    <span class="font">经办人：</span>
+                    <select name="" id="" class="form-input">
+                        <option value="">张三</option>
+                        <option value="">李四</option>
+                        <option value="">王五</option>
+                        <option value="">赵六</option>
+                    </select>
+                </div>
+                <div class="form-line">
+                    <span class="font">任务内容：</span>
+                    <textarea name="" id="" class="form-textarea"></textarea>
+                </div>
+                <div class="form-line">
+                    <span class="font">办理日志：</span>
+                    <textarea name="" id="" class="form-textarea"></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" id="task_save_btn" class="btn btn-info">确 定</button>
+                <button type="button" class="btn btn-cancel ">取 消</button>
+            </div>
+        </div>
+    </div>
+    <!-- 完成任务 -->
+    <div class="pop-box pop-box-fun-finish">
+        <div class="pop-box-title">
+            完成任务<span class="pop-box-close">×</span>
+        </div>
+        <div class="pop-box-content">
+            <div class="task-layout">
+                <div class="form-line">
+                    <span class="font">任务名称：</span>
+                    <input type="text" class="form-input">
+                    <span class="error-msg">请输入任务名称</span>
+                </div>
+                <div class="form-line">
+                    <span class="font">任务期限：</span>
+                    <input type="text" class="form-input Wdate" onClick="WdatePicker()" readonly>
+                </div>
+                <div class="form-line">
+                    <span class="font">任务内容：</span>
+                    <textarea name="" id="" class="form-textarea"></textarea>
+                </div>
+                <div class="form-line">
+                    <span class="font">办理日志：</span>
+                    <textarea name="" id="" class="form-textarea"></textarea>
+                </div>
+                <div class="form-line">
+                    <span class="font">附件：</span>
+                    <input type="file" class="input-file">
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" id="task_save_btn" class="btn btn-info">确 定</button>
+                <button type="button" class="btn btn-cancel ">取 消</button>
+            </div>
+        </div>
+    </div>
     <script>
-        //接受任务弹层
-        function acceptModal() {
-            $("#accept-task").show();
-        }
-        //接受任务确认
-        function acceptTaskSave() {
+        //接收任务弹层
+        $(".fun-accept").click(function () {
+            $('.pop-box-fun-accept, .pop-box-bg').show();
+        })
+        $("#task_save_btn").click(function () {
             var name = $("#accept_task_name").val();
             var time = $("#accept_task_time").val();
             var con = $("#accept_task_con").val();
@@ -298,15 +404,16 @@
             } else {
                 return true;
             }
-        }
+        })
+
         //转发任务弹层
-        function transpondModal() {
-            $("#transpond-task").show();
-        }
+        $(".fun-transpond").click(function () {
+            $('.pop-box-fun-transpond, .pop-box-bg').show();
+        })
         //完成任务弹层
-        function finishModal() {
-            $("#finish-task").show();
-        }
+        $(".fun-finish").click(function () {
+            $('.pop-box-fun-finish, .pop-box-bg').show();
+        })
 
         /***********************/
         /*****jq操作dom对象****/

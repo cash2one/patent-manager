@@ -5,13 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>号码规则管理</title>
+  <title>九致专利后台管理系统</title>
+  <link rel="stylesheet" href="./component/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./dist/css/main.css">
   <link rel="stylesheet" href="./component/DatePicker/skin/WdatePicker.css">
   <link rel="stylesheet" href="./component/iconfont/iconfont.css">
-  <script src="./dist/js/jquery-3.2.1.min.js"></script>
-  <script src="./dist/js/common.min.js"></script>
+  <link rel="stylesheet" href="./component/scrollBar/jquery.mCustomScrollbar.css">
+  <script src="./dist/js/jquery-1.12.4.min.js"></script>
+  <script src="./component/scrollBar/jquery.mousewheel.min.js"></script>
+  <script src="./component/scrollBar/jquery.mCustomScrollbar.min.js"></script>
+  <script src="./dist/js/common.js"></script>
   <script src="./component/DatePicker/WdatePicker.js"></script>
+  <script src="./component/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -28,81 +33,75 @@
     </div>
   </div>
   <!-- header end -->
-  <div class="contariner">
-    <!-- 左侧菜单栏 -->
-    <div id="left" class="menu">
-      <ul>
-        <li>
-          <a href="javascript:;" class="a1"><i class="iconfont icon">&#xe601;</i><span>待办事项</span><i class="iconfont arrow icon-xiangyou"></i></a>
-          <ul class="subnav-menu">
-            <li><a href="./待办流程业务.html">待办流程任务</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"><i class="iconfont icon">&#xe625;</i> <span>立案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./立案审批.html">立案审批</a></li>
-            <li><a href="./立案审批信息.html">立案审批信息</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"><i class="iconfont icon">&#xe6ea;</i> <span>新案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./新增审核详细.html">新案审核详细</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"><i class="iconfont icon">&#xe611;</i> <span>任务管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./任务统计.html">任务统计</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"> <i class="iconfont icon">&#xe638;</i><span>案件管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./新案案件.html">新案案件</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"> <i class="iconfont icon">&#xe764;</i><span>档案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./档案管理详细.html">档案管理详细</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"><i class="iconfont icon">&#xe644;</i> <span>配置管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./号码规则管理.html">号码规则管理</a></li>
-            <li><a href="./费用配置管理.html">费用配置管理</a></li>
-            <li><a href="./流程人员配置.html">流程人员配置</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"><i class="iconfont icon">&#xe6bb;</i> <span>专利配置</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./专利许可添加.html">专利许可添加、修改</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="a1"> <i class="iconfont icon">&#xe6fa;</i><span>系统管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
-          <ul class="subnav-menu">
-            <li><a href="./组织机构管理.html">组织机构管理</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- 右侧 主要内容 -->
-    <div class="contariner-right">
-      <div id="main">
-        <!-- 面包屑导航 -->
-        <div class="position-nav">
-          <ul class="breadcrumb">
-            <span>当前位置：</span>
-            <li>配置管理</li>
-            <li class="active">费用配置管理</li>
-          </ul>
-        </div>
-        <!-- 主体 号码规则管理-->
+  <!-- 左侧菜单栏 -->
+  <div id="left" class="menu mCustomScrollbar">
+    <ul>
+      <li>
+        <a href="javascript:;" class="a1"><i class="iconfont icon">&#xe601;</i><span>待办事项</span><i class="iconfont arrow icon-xiangyou"></i></a>
+        <ul class="subnav-menu">
+          <li><a href="./待办流程业务.html">待办流程任务</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"><i class="iconfont icon">&#xe625;</i> <span>立案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./立案审批.html">立案审批</a></li>
+          <li><a href="./立案审批信息.html">立案审批信息</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"><i class="iconfont icon">&#xe6ea;</i> <span>新案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./新案审核详细.html">新案审核详细</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"><i class="iconfont icon">&#xe611;</i> <span>任务管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./任务统计.html">任务统计</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"> <i class="iconfont icon">&#xe638;</i><span>案件管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./新案案件.html">新案案件</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"> <i class="iconfont icon">&#xe764;</i><span>档案管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./档案管理详细.html">档案管理详细</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"><i class="iconfont icon">&#xe644;</i> <span>配置管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./号码规则管理.html">号码规则管理</a></li>
+          <li><a href="./费用配置管理.html">费用配置管理</a></li>
+          <li><a href="./流程人员配置.html">流程人员配置</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"><i class="iconfont icon">&#xe6bb;</i> <span>专利配置</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./专利许可添加.html">专利许可添加、修改</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="a1"> <i class="iconfont icon">&#xe6fa;</i><span>系统管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
+        <ul class="subnav-menu">
+          <li><a href="./组织机构管理.html">组织机构管理</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- 右侧 框架 -->
+  <div class="fl embed-responsive right-content" id="content">
+    <!-- <iframe name="subject" src="" class="embed-responsive-item" id="subject"></iframe> -->
+    <div class="embed-responsive-item" id="subject">
+      <!-- 我的位置 -->
+      <h2 class="title"><i>当前位置：</i>费用配置管理</h2>
+      <div class="main-con">
         <!-- 搜索标签 -->
         <div class="search-layout">
           <form action="" onsubmit="return false;">
@@ -114,14 +113,14 @@
           </form>
         </div>
         <!-- 搜索标签 end-->
-        <!-- 任务弹层 -->
+        <!-- 弹层按钮 -->
         <div class="task-btn">
           <span class="ml15 mr15">年费</span>
-          <a href="javascript:;" class="btn btn-info" onclick="addModal()">新增</a>
-          <a href="javascript:;" class="btn btn-primary" onclick="editModal()">修改</a>
-          <a href="javascript:;" class="btn btn-danger" onclick="deleteModal()">删除</a>
+          <a href="javascript:;" class="btn btn-info fun-add">新增</a>
+          <a href="javascript:;" class="btn btn-primary fun-edit">修改</a>
+          <a href="javascript:;" class="btn btn-danger fun-delete">删除</a>
         </div>
-        <!-- 任务弹层 end -->
+        <!-- 弹层按钮 end -->
         <!-- 表格table -->
         <div class="table-data-list">
           <table class="table">
@@ -214,177 +213,127 @@
         <!-- 分页 end -->
       </div>
     </div>
-    <!-- 右侧 主要内容end -->
   </div>
-  <!-- 新增 +  修改 年费 弹层-->
-  <div class="modal" id="add-and-edit">
-    <div class="modal-content" style="width:460px;">
-      <div class="modal-body">
-        <div class="annual-fee">
-          <div class="item">
-            <span class="font">国家</span>
-            <select name="" id="">
-              <option value="0">中国</option>
-              <option value="1">外国</option>
-            </select>
-          </div>
-          <div class="item">
-            <span class="font">专利类型</span>
-            <select name="" id="">
-              <option value="0">发明</option>
-              <option value="1">实用新型</option>
-              <option value="2">外观专利</option>
-            </select>
-          </div>
-          <div class="item">
-            <span class="font">币种</span>
-            <select name="" id="">
-                <option value="0">人民币</option>
-                <option value="1">欧元</option>
-                <option value="2">美元</option>
+  <!--  弹框 -->
+  <div class="pop-box-bg"></div>
+  <!-- 新增 -->
+  <div class="pop-box pop-box-fun-add">
+    <div class="pop-box-content">
+       <div class="annual-fee">
+        <div class="item">
+          <span class="font">国家</span>
+          <select name="" id="">
+                <option value="0">中国</option>
+                <option value="1">外国</option>
               </select>
-          </div>
-          <div class="item">
-            <span class="font">第一年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第二年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第三年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第四年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第五年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第六年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第七年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第八年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第九年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十一年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十二年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十三年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十四年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十五年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十六年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十七年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十八年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第十九年</span>
-            <input type="text">
-          </div>
-          <div class="item">
-            <span class="font">第二十年</span>
-            <input type="text">
-          </div>
+        </div>
+        <div class="item">
+          <span class="font">专利类型</span>
+          <select name="" id="">
+            <option value="0">发明</option>
+            <option value="1">实用新型</option>
+            <option value="2">外观专利</option>
+          </select>
+        </div>
+        <div class="item">
+          <span class="font">币种</span>
+          <select name="" id="">
+            <option value="0">人民币</option>
+            <option value="1">欧元</option>
+            <option value="2">美元</option>
+          </select>
+        </div>
+        <div class="item">
+          <span class="font">第一年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第二年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第三年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第四年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第五年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第六年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第七年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第八年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第九年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十一年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十二年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十三年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十四年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十五年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十六年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十七年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十八年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第十九年</span>
+          <input type="text">
+        </div>
+        <div class="item">
+          <span class="font">第二十年</span>
+          <input type="text">
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-info" onclick="acceptTaskSave()">确认</button>
-        <button class="btn btn-cancel" onclick="closeModal()">取消</button>
+      <div class="text-center clear">
+        <button type="button" id="task_save_btn" class="btn btn-info">确 定</button>
+        <button type="button" class="btn btn-cancel ">取 消</button>
       </div>
     </div>
   </div>
-  </div>
-  <!--  新增 +  修改 年费 弹层 end -->
   <script>
-    // 新增弹出层
-    function addModal() {
-      $('#add-and-edit').show()
-    }
-     // 编辑弹出层
-     function editModal() {
-      $('#add-and-edit').show()
-    }
-    /***********************/
-    /*****jq操作dom对象****/
-
-    $(function () {
-      $('.menu ul li .a1').on('click', function () {
-        var dataOpen = $(this).next().attr('data-open');
-        $(".menu ul li .a1").removeClass("active");
-        $(".menu ul li .a1").next().attr('data-open', 0);
-        $(".menu ul li .a1").next().slideUp(10);
-        $(".menu ul li .a1").find('.arrow').removeClass('icon-arrow_down').addClass(
-          'icon-xiangyou')
-        $(this).next().attr('data-open', dataOpen);
-        $(this).addClass("active");
-        if ($(this).next().attr('data-open') == 0) {
-          $(this).next().attr('data-open', 1);
-          $(this).next().slideDown(200);
-          $(this).find('.arrow').removeClass('icon-xiangyou').addClass('icon-arrow_down')
-        } else {
-          $(this).next().attr('data-open', 0);
-          $(this).next().slideUp(200);
-          $(this).find('.arrow').removeClass('icon-arrow_down').addClass('icon-xiangyou')
-        }
-      })
-      $("ul.subnav-menu>li").on("click", function () {
-        $("ul.subnav-menu>li").removeClass("active");
-        $(this).addClass("active");
-      });
-      // 全选功能
-      $("#CheckAll").click(function () {
-        $('[name=items]:checkbox').prop("checked", this.checked);
-      })
-      //单项与全选实现联动
-      $('[name=items]:checkbox').click(function () {
-        var flag = true;
-        $('[name=items]:checkbox').each(function () {
-          if (!this.checked) {
-            flag = false;
-          }
-        })
-        $("#CheckAll").prop('checked', flag);
-      })
-    });
+    $(".fun-add").click(function(){
+      $(".pop-box-fun-add,.pop-box-bg").show()
+    })
   </script>
 </body>
 

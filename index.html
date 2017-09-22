@@ -64,7 +64,7 @@
             <li>
                 <a href="#" class="a1"> <i class="iconfont icon">&#xe638;</i><span>案件管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
                 <ul class="subnav-menu">
-                    <li><a href="./新案案件.html">新案案件</a></li>
+                    <li><a href="./新增案件.html">新增案件</a></li>
                 </ul>
             </li>
             <li>
@@ -103,15 +103,43 @@
             <h2 class="title"><i>当前位置：</i>首页</h2>
             <!-- 主要内容 -->
             <div class="main-con">
-               <img src="./dist/images/index.png" alt="">
+                <img src="./dist/images/index.png" alt="">
             </div>
         </div>
         <div class="footer"> 版权所有：苏州市相城区科技发展局&nbsp;&nbsp;&nbsp;&nbsp;备案号：苏ICP备15051895&nbsp;&nbsp;&nbsp;&nbsp;技术支持：南京九致信息科技有限公司</div>
     </div>
-
-    <script>
-        init();
-    </script>
+    <!-- 通用提示弹出框 -->
+    <div class="pop-box pop-box-prompt">
+        <div class="pop-box-title">
+            提示<span class="pop-box-close">×</span>
+        </div>
+        <div class="pop-box-content ">
+            <div class="pop-box-content-info">
+                <p id="content_info" class="text-center"></p>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-info btn-prompt-confirm">确 定</button>
+                <!-- <button type="button" class="btn btn-cancel ">取 消</button> -->
+            </div>
+        </div>
+    </div>
+    <!-- 通用删除提示对话框 -->
+    <div class="pop-box pop-box-confirm-delete">
+        <div class="pop-box-title">
+            删除确认<span class="pop-box-close">×</span>
+        </div>
+        <div class="pop-box-content ">
+            <div class="pop-box-content-info">
+                <p id="delete_content_info" class="text-center">确定要删除吗?</p>
+            </div>
+            <div class="text-center">
+                <button id="confirm_delete_btn" type="button" class="btn btn-info btn-confirm-delete">确 定</button>
+                <button type="button" class="btn btn-cancel ">取 消</button>
+            </div>
+        </div>
+    </div>
+    <!-- 通用提示弹出框 背景 -->
+    <div class="pop-box-bg"></div>
 </body>
 
 </html>

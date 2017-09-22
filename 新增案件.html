@@ -19,6 +19,7 @@
   <script src="./component/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
+
 <body>
   <!-- header  -->
   <div class="header">
@@ -64,7 +65,7 @@
       <li>
         <a href="#" class="a1"> <i class="iconfont icon">&#xe638;</i><span>案件管理</span><i class="iconfont arrow icon-xiangyou"></i> </a>
         <ul class="subnav-menu">
-          <li><a href="./新案案件.html">新案案件</a></li>
+          <li><a href="./新增案件.html">新增案件</a></li>
         </ul>
       </li>
       <li>
@@ -95,120 +96,165 @@
       </li>
     </ul>
   </div>
+
   <!-- 右侧 框架 -->
   <div class="fl embed-responsive right-content" id="content">
+    <!-- <iframe name="subject" src="" class="embed-responsive-item" id="subject"></iframe> -->
     <div class="embed-responsive-item" id="subject">
       <!-- 我的位置 -->
-      <h2 class="title"><i>当前位置：</i>立案审批信息</h2>
+      <h2 class="title"><i>当前位置：</i>新增案件</h2>
       <!-- 主要内容 -->
       <div class="main-con">
         <div class="common-layout">
-          <h4>立案信息</h4>
+          <h4>基本信息</h4>
           <div class="item">
-            <span class="font">立案名称：</span>
+            <span class="font">案件名称：</span>
             <input type="text" class="input_text">
           </div>
           <div class="item">
-            <span class="font">立案撰写人：</span>
+            <span class="font">案件所属部门：</span>
+            <select name="" id="" class="select">
+                <option value="0">--请选择--</option>
+                <option value="1">xx部</option>
+                <option value="2">xx部</option>
+            </select>
+          </div>
+          <div class="item">
+            <span class="font">发明名称：</span>
             <input type="text" class="input_text">
           </div>
           <div class="item">
-            <span class="font">所属部门：</span>
+            <span class="font">案件类型：</span>
+            <select name="" id="" class="select">
+                <option value="0">--请选择--</option>
+                <option value="1">发明</option>
+                <option value="2">实用新型</option>
+                <option value="3">外观设计</option>
+                <option value="4">PCT发明</option>
+                <option value="5">PCT实用新型</option>
+                <option value="6">复审</option>
+                <option value="7">发明实用双申报</option>
+                <option value="8">类型待定</option>
+            </select>
+          </div>
+          <div class="item">
+            <span class="font">申请号：</span>
             <input type="text" class="input_text">
           </div>
           <div class="item">
-            <span class="font">涉及技术：</span>
+            <span class="font">内部唯一编号：</span>
+            <input type="text" class="input_text">
+          </div>
+
+          <div class="item">
+            <span class="font">办登通知书发文日：</span>
             <input type="text" class="input_text">
           </div>
           <div class="item">
-            <span class="font">涉及项目：</span>
+            <span class="font">申请日：</span>
+            <input type="text" class="input_text Wdate" onclick="WdatePicker()">
+          </div>
+          <div class="item">
+            <span class="font">费减：</span>
+            <select name="" id="" class="select">
+                  <option value="0">--请选择--</option>
+                  <option value="1">是</option>
+                  <option value="2">否</option>
+            </select>
+          </div>
+          <div class="item">
+            <span class="font">授权日：</span>
+            <input type="text" class="input_text Wdate" onclick="WdatePicker()">
+          </div>
+          <div class="item">
+            <span class="font">复审费减比例：</span>
+            <input type="number" class="input_text" style="width:202px;">%
+          </div>
+          <div class="item">
+            <span class="font">费减比例：</span>
+            <input type="number" class="input_text" style="width:202px;">%
+          </div>
+          <div class="item">
+            <span class="font">权利要求项目数：</span>
+            <input type="number" class="input_text" style="width:202px;">%
+          </div>
+          <div class="item">
+            <span class="font">实质审查：</span>
+            <select name="" id="" class="select">
+                <option value="0">--请选择--</option>
+                <option value="1">是</option>
+                <option value="2">否</option>
+          </select>
+          </div>
+
+          <h4>案件状态</h4>
+          <div class="item">
+            <span class="font">案件状态：</span>
+            <select name="" id="" class="select">
+                  <option value="0">--请选择--</option>
+                  <option value="1">状态1</option>
+                  <option value="2">状态2</option>
+            </select>
+          </div>
+          <div class="item">
+            <span class="font">案件状态时间：</span>
+            <input type="text" class="input_text Wdate" onclick="WdatePicker()">
+          </div>
+          <div class="item">
+            <span class="font">第二状态：</span>
+            <select name="" id="" class="select">
+                <option value="0">--请选择--</option>
+                <option value="1">状态1</option>
+                <option value="2">状态2</option>
+            </select>
+          </div>
+          <div class="item">
+            <span class="font">第二状态时间：</span>
+            <input type="text" class="input_text Wdate" onclick="WdatePicker()">
+          </div>
+          <div class="item">
+            <span class="font">第三状态：</span>
+            <select name="" id="" class="select">
+                <option value="0">--请选择--</option>
+                <option value="1">状态1</option>
+                <option value="2">状态2</option>
+            </select>
+          </div>
+          <div class="item">
+            <span class="font">第三状态时间：</span>
+            <input type="text" class="input_text Wdate" onclick="WdatePicker()">
+          </div>
+          <h4>发明人信息</h4>
+          <div class="item">
+            <span class="font">发明人：</span>
             <input type="text" class="input_text">
           </div>
           <div class="item">
-            <span class="font">涉及产品：</span>
+            <span class="font">发明人单位：</span>
             <input type="text" class="input_text">
           </div>
           <div class="item">
-            <span class="font">立案申请日期：</span>
-            <input type="text" class="input_text" onclick="WdatePicker()">
-          </div>
-          <div class="item">
-            <span class="font">研发负责人：</span>
+            <span class="font">联系方式：</span>
             <input type="text" class="input_text">
           </div>
-          <div class="item" style="width:100%">
-            <span class="font fl">发明人：</span>
-            <table class="table invention-table fl">
-              <tr>
-                <th>发明顺序</th>
-                <th>姓名</th>
-                <th>联系电话</th>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-            </table>
-          </div>
-          <h4>技术评审</h4>
-          <div class="item" style="width:100%;">
-            <span class="font fl">意见：</span>
-            <textarea class="textarea_text fl"></textarea>
-          </div>
-          <h4>知识产权审查</h4>
+          <h4>申请人信息</h4>
           <div class="item">
             <span class="font">申请人：</span>
             <input type="text" class="input_text">
           </div>
+          <h4>案件相关人信息</h4>
           <div class="item">
-            <span class="font">申请地域：</span>
+            <span class="font">案件所属人：</span>
             <input type="text" class="input_text">
-          </div>
-          <div class="item">
-            <span class="font">专利类型：</span>
-            <select name="" id="" class="select">
-                  <option value="">专利类型1</option>
-                  <option value="">专利类型2</option>
-                  <option value="">专利类型3</option>
-                </select>
-          </div>
-          <div class="item">
-            <span class="font">代理机构：</span>
-            <input type="text" class="input_text">
-          </div>
-          <div class="item">
-            <span class="font">代理人：</span>
-            <input type="text" class="input_text">
-          </div>
-          <div class="item" style="width:100%;">
-            <span class="font fl">意见：</span>
-            <textarea class="textarea_text"></textarea>
-          </div>
-          <h4>立案审批</h4>
-          <div class="item" style="width:100%">
-            <span class="font">处理动作：</span>
-            <span class="action">
-                <label for="agree"><input id="agree" type="radio" name="action"> 同意</label>
-                <label for="reject"><input id="reject" type="radio" name="action"> 驳回</label>
-            </span>
-          </div>
-          <div class="item" style="width:100%">
-            <span class="font fl">意见：</span>
-            <textarea class="textarea_text"></textarea>
           </div>
           <div class="btn-wrapper">
             <button class="btn btn-info">提交</button>
-            <button class="btn btn-cancel">返回</button>
+            <button class="btn btn-cancel">取消</button>
           </div>
         </div>
       </div>
     </div>
+    <div class="footer"> 版权所有：苏州市相城区科技发展局&nbsp;&nbsp;&nbsp;&nbsp;备案号：苏ICP备15051895&nbsp;&nbsp;&nbsp;&nbsp;技术支持：南京九致信息科技有限公司</div>
   </div>
 </body>
 

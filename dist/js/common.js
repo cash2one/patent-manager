@@ -1,14 +1,31 @@
-// 关闭 modal弹出层
-function closeModal() {
-  $(".modal").hide()
+
+//提示对话框
+function custom_prompt(content_info) {
+  $('.pop-box-prompt, .pop-box-bg').show();
+  $("#content_info").html(content_info);
 }
 
+//删除确认对话框
+function delete_confirm(content_info) {
+  $('.pop-box-confirm-delete, .pop-box-bg').show();
+  $("#delete_content_info").html(content_info);
+}
 
 /* *******jq操作dom对象********** */
+
+//关闭对话框
+$(function(){
+  $('.pop-box-close,.btn-cancel,.btn-prompt-confirm').on("click", function () {
+    $('.pop-box,.pop-box-bg').hide();
+  });
+})
 //初始化 宽高度
 $(window).resize(function () {
   init();
 });
+$(function(){
+  init();
+})
 function init() {
   var body_h = $('body').height();
   var body_w = $('body').width();
